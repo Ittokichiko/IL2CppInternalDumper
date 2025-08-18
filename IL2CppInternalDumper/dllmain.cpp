@@ -5,6 +5,7 @@ DWORD WINAPI Main() {
     fs::path p(".\\IL2Cpp-DumpedGame");
     UnityResolve::DumpToFile(".\\IL2Cpp-DumpedGame");
     MessageBoxA(0, "Dumped Successfully!!!", "IL2CppInternalDumper", MB_OK | MB_ICONINFORMATION);
+    return TRUE;
 }
 
 BOOL APIENTRY DllMain( HMODULE hModule,
@@ -23,5 +24,6 @@ BOOL APIENTRY DllMain( HMODULE hModule,
     }
     return TRUE;
 }
+
 
 

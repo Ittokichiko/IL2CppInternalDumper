@@ -3,14 +3,8 @@
 DWORD WINAPI Main() {
     UnityResolve::Init(GetModuleHandle((const WCHAR*)L"GameAssembly.dll"), UnityResolve::Mode::Il2Cpp);
     fs::path p(".\\IL2Cpp-DumpedGame");
-    if (p.empty()) {
-        UnityResolve::DumpToFile(".\\IL2Cpp-DumpedGame");
-        MessageBoxA(0, "Dumped Successfully!!!", "IL2CppInternalDumper", MB_OK | MB_ICONINFORMATION);
-        exit(322);
-    }
-    else {
-        exit(443);
-    }
+    UnityResolve::DumpToFile(".\\IL2Cpp-DumpedGame");
+    MessageBoxA(0, "Dumped Successfully!!!", "IL2CppInternalDumper", MB_OK | MB_ICONINFORMATION);
 }
 
 BOOL APIENTRY DllMain( HMODULE hModule,
@@ -29,4 +23,5 @@ BOOL APIENTRY DllMain( HMODULE hModule,
     }
     return TRUE;
 }
+
 
